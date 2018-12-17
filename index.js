@@ -47,10 +47,10 @@ app.get("/list/events", function(req, res){
     console.log("Querying request");
 });
 
-app.use('/bundle.js', express.static(path.join(__dirname ,'meetup/public/bundle.js')));
+app.use('/bundle.js', express.static(path.join("./meetup/public/bundle.js")));
 app.get('/', function(req, res){
     console.log("sending file");
-    res.sendFile(path.join(__dirname ,"meetup/public/index.html"));
+    res.sendFile(path.resolve("./meetup/public/index.html"));
 
 });
 
