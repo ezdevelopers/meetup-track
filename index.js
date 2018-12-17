@@ -47,11 +47,11 @@ app.get("/list/events", function(req, res){
     console.log("Querying request");
 });
 
-app.use('/bundle.js', express.static(path.join("./meetup/public/bundle.js")));
-app.use('/favicon.ico', express.static(path.join("./meetup/public/favicon.ico")));
+app.use('/bundle.js', express.static(path.join("./public/bundle.js")));
+app.use('/favicon.ico', express.static(path.join("./public/favicon.ico")));
 app.get('/', function(req, res){
     console.log("sending file");
-    const index = path.join(__dirname,"meetup", "public", "index.html")
+    const index = path.join(__dirname,"public", "index.html")
     res.sendFile(index);
 
 });
