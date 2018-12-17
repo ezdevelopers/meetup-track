@@ -48,9 +48,11 @@ app.get("/list/events", function(req, res){
 });
 
 app.use('/bundle.js', express.static(path.join("./meetup/public/bundle.js")));
+app.use('/favicon.ico', express.static(path.join("./meetup/public/favicon.ico")));
 app.get('/', function(req, res){
     console.log("sending file");
-    res.sendFile(path.resolve("./meetup/public/index.html"));
+    const index = path.join(__dirname,"meetup", "public", "index.html")
+    res.sendFile(index);
 
 });
 
